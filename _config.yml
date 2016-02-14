@@ -19,3 +19,11 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+paginate: 10
+permalink: pretty
+
+
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
