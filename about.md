@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Foodjumper.com is an open source food site.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+It is a place for foodies to find food they wan or crave and learn how to make it, and also to share how it's made.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+If you want to share food, then all you have to do is [open an issue](https://github.com/freekrai/foodjumper/issues/new) in the foodjumper repo, with info about how to make the recipe, any images, etc and we'll post it on here for everyone to share.
