@@ -1,51 +1,14 @@
 ---
 layout: default
 ---
-<article class="box post post">
-	<header>
-		<h2><a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
-	</header>
-	<div class="info">
-		<span class="date">
-			<span class="month">
-{% assign m = page.date | date: "%B" %}
-{% case m %}
-  {% when 'May' or June' or 'July' %}{{ m }}
-  {% when 'September' %}Sept
-  {% else %}{{ page.date | date: "%b" }}
-  {% endcase %}			
-			</span> 
-			<span class="day">{{ page.date | date: "%d" }}</span>
-			<span class="year">, {{ page.date | date: "%Y" }}</span>
-		</span>
-{% comment %}
-		<ul class="stats">
-			<li><a href="#" class="icon fa-comment">16</a></li>
-			<li><a href="#" class="icon fa-heart">32</a></li>
-			<li><a href="#" class="icon fa-twitter">64</a></li>
-			<li><a href="#" class="icon fa-facebook">128</a></li>
-		</ul>
-{% endcomment %}
+<article class="box post post"  itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 itemprop="name headline">{{ page.title }}</h1>
+	{% if page.photo %}
+		<span class="image main"><img src="{{ page.photo | prepend: site.baseurl }}" alt="{{page.title}}" /></span>
+	{% endif %}
+	<div class="post-content" itemprop="articleBody">	
+		<div class="well">
+			{{ content }}
+		</div>
 	</div>
-{% comment %}
-	<a href="#" class="image featured"><img src="/assets/images/pic01.jpg" alt="" /></a>
-{% endcomment %}
-	{{ content }}
-	<hr />
 </article>
-
-{% comment %}
-
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-</article>
-{% endcomment %}
