@@ -1,15 +1,19 @@
 ---
 layout: default
 ---
-<div class="row">
 {% for post in site.posts %}
-	<div class="6u 12u(narrow)">
 		<article class="box centerit">
-			{% if post.photo %}
-				<a href="{{ post.url | prepend: site.baseurl }}" class="image fit"><img src="{{ post.photo | prepend: site.baseurl }}" alt="{{post.title}}" /></a>
-			{% endif %}
-			<h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-			{{ post.content }}
+			<div class="row">
+				<div class="6u 12u(narrow)">
+					<h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{{ post.content }}
+				</div>
+				<div class="6u 12u(narrow)">
+					{% if post.photo %}
+						<a href="{{ post.url | prepend: site.baseurl }}" class="image fit"><img src="{{ post.photo | prepend: site.baseurl }}" alt="{{post.title}}" /></a>
+					{% endif %}
+				</div>
+			</div>
 		</article>
 	</div>
 {% endfor %}
