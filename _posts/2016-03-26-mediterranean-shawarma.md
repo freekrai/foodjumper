@@ -13,7 +13,7 @@ ingredients:
   - 1/2 red onion, sliced horizontally
   - x2 5.5 oz (150 g each) beef steaks
   - salt + pepper to taste
-photo: /media//media/shawarma.jpg
+photo: /media/shawarma.jpg
 steps:
   - Place a frying pan on your stove and turn it on to warm up.
   - In a blender, combine the yogurt, oil, the lemon juice, and the garlic.
