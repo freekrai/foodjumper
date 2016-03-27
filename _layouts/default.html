@@ -2,12 +2,31 @@
 <html>
 	{% include head.html %}
 <body>
-<div id="content">
-	<div class="inner">
-		{{ content }}
+<div id="wrapper">
+	<header id="header">
+		<div class="inner">
+			<a href="/" class="logo"><span class="title">FoodJumper</span></a>
+			<nav>
+				<ul>
+				<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li class="current"><a href="/">Latest Posts</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="https://github.com/freekrai/foodjumper/issues/new" target="_blank">Submit Your Recipe</a></li>
+		</ul>
+	</nav>
+	<div id="main">
+		<div class="inner">
+			{{ content }}
+		</div>
 	</div>
 </div>
-{% include sidebar.html %}
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/skel.min.js"></script>
