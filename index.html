@@ -6,9 +6,10 @@ layout: default
 </header>
 <section class="tiles">
 {% for post in site.posts %}
-	<article class="style2">
+	{% capture thecycle %}{% cycle 'style1', 'style2', 'style3', 'style4', 'style5', 'style6' %}{% endcapture %}
+	<article class="{{ thecycle }}">
 		<span class="image">
-		<img src="{{ post.photo | prepend: site.baseurl }}" alt="{{post.title}}" />
+			<img src="{{ post.photo | prepend: site.baseurl }}" alt="{{post.title}}" />
 		</span>
 		<a href="{{ post.url | prepend: site.baseurl }}">
 			<h2>{{ post.title }}</h2>
