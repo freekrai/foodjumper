@@ -1,79 +1,65 @@
 ---
 layout: default
 ---
-<article class="box post post">
+<article class="box post post"  itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
-		<h2><a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
+		<h2 itemprop="name headline">{{ page.title }}</h2>
 	</header>
-	{% comment %}
-	<div class="info">
-		<span class="date">
-			<span class="month">
-{% assign m = page.date | date: "%B" %}
-{% case m %}
-  {% when 'May' or June' or 'July' %}{{ m }}
-  {% when 'September' %}Sept
-  {% else %}{{ page.date | date: "%b" }}
-  {% endcase %}			
-			</span> 
-			<span class="day">{{ page.date | date: "%d" }}</span>
-			<span class="year">, {{ page.date | date: "%Y" }}</span>
-		</span>
-	</div>
-	{% endcomment %}
 	{% if page.photo %}
 		<span class="image featured"><img src="{{ page.photo | prepend: site.baseurl }}" alt="{{page.title}}" /></span>
 	{% endif %}
-	<div class="well">
-		{{ content }}
-	</div>
-	{% if page.ingredients.size > 0 %}
-		<h3>What You Need</h3>
-		<ul class="fa-ul">
-		{% for item in page.ingredients %}
-		<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
-		{% endfor %}
-		</ul>
-	{% endif %}
-
-	{% if page.steps.size > 0 %}
-		<h3>How to Make It</h3>
-		<ul class="fa-ul">
-		{% for item in page.steps %}
-		<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
-		{% endfor %}
-		</ul>
-	{% endif %}
-	<hr />
-	<div class="row">
-		<div class="6u 12u(narrow)">			
-	{% if page.options.size > 0 %}
-		<h3>Optional</h3>
-		<ul class="fa-ul">
-		{% for item in page.options %}
-		<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
-		{% endfor %}
-		</ul>
-	{% endif %}
+	<div class="post-content" itemprop="articleBody">	
+		<div class="well">
+			{{ content }}
 		</div>
-		<div class="6u 12u(narrow)">
-	{% if page.dependencies.size > 0 %}
-		<h3>Dependencies</h3>
-		<ul class="fa-ul">
-		{% for item in page.dependencies %}
-		<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
-		{% endfor %}
-		</ul>
-	{% endif %}
+		{% if page.ingredients.size > 0 %}
+			<h3>What You Need</h3>
+			<ul class="fa-ul">
+			{% for item in page.ingredients %}
+			<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	
+		{% if page.steps.size > 0 %}
+			<h3>How to Make It</h3>
+			<ul class="fa-ul">
+			{% for item in page.steps %}
+			<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+		<hr />
+		<div class="row">
+			<div class="6u 12u(narrow)">			
+		{% if page.options.size > 0 %}
+			<h3>Optional</h3>
+			<ul class="fa-ul">
+			{% for item in page.options %}
+			<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+			</div>
+			<div class="6u 12u(narrow)">
+		{% if page.dependencies.size > 0 %}
+			<h3>Dependencies</h3>
+			<ul class="fa-ul">
+			{% for item in page.dependencies %}
+			<li><i class="fa-li fa fa-check-square"></i>{{ item | capitalize }}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+			</div>
 		</div>
-	</div>
-	{% if page.attribution %}
-	<div>
-		<p>
-			Recipe By <a href="{{page.attribution}}">{{page.attribution}}</a>
-		</p>
-	</div>
-	{% endif %}
+		{% if page.attribution %}
+		<div>
+			<p>
+				Recipe By <a href="{{page.attribution}}">{{page.attribution}}</a>
+			</p>
+		</div>
+		{% endif %}
+		</div>
 	</div>
 </article>
 

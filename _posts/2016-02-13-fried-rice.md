@@ -20,8 +20,6 @@ steps:
   - Add vegetables, cook till tender
   - Add rice, stir and toss to mix them up
   - You'll find out when it's ready...
-attribution:
-  - http://rogerstringer.com
 ---
 
 Fried rice... It's a dish that just about everyone loves and  can be easily customized to however you like it.
